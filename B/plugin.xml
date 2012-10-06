@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="b.applyTransforms"
+            name="Apply transforms">
+      </command>
+      <command
+            id="b.loadACommand"
+            name="Load A command">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="b.ApplyTransforms"
+            commandId="b.applyTransforms">
+      </handler>
+      <handler
+            class="b.LoadATransform"
+            commandId="b.loadACommand">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               id="b.command.menu"
+               label="B Commands">
+            <command
+                  commandId="b.applyTransforms"
+                  style="push">
+            </command>
+            <command
+                  commandId="b.loadACommand"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+
+</plugin>
